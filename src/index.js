@@ -19,6 +19,9 @@ async function run(cmd, ...params) {
 function getCurrentBranch() {
   const branchName = process.env.GITHUB_REF.split('/').pop()
   core.info('Original branch name: ', branchName)
+  if (['master', 'develop', 'release'].includes(branchName)) {
+    throw new Error('Protected branch, cannot remove deployment')
+  }
   return branchName.replace(/\//, '-')
 }
 
