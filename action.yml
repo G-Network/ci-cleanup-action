@@ -1,0 +1,9 @@
+name: 'SLS Cleanup'
+description: 'Create a release based on package version'
+author: 'G-Network'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'tag'
+  color: 'gray-dark'
